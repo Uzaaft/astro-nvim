@@ -13,6 +13,11 @@ end
 
 return {
   {
+    "nvim-neo-tree/neo-tree.nvim",
+    config = function(_, opts) opts.width = 45 end,
+  },
+
+  {
     "goolord/alpha-nvim",
     opts = function(_, opts)
       opts.section.header.val = {
@@ -35,10 +40,5 @@ return {
         opts.button("l", "󰒲 Lazy ", ":Lazy<CR>"),
       }
     end,
-  },
-
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    config = function(_, opts) opts.width = 45 end,
   },
 }
