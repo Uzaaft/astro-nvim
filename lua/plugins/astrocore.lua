@@ -16,6 +16,7 @@ return {
         undodir = os.getenv "HOME" .. "/.vim/undodir",      
       },
     },
+
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       n = {
@@ -29,4 +30,5 @@ return {
         },
       },
     },
-  }
+  },
+}
