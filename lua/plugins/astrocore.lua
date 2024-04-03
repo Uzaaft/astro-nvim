@@ -13,7 +13,7 @@ return {
         smartindent = true,
         swapfile = false,
         tabstop = 4,
-        undodir = os.getenv "HOME" .. "/.vim/undodir",      
+        undodir = os.getenv "HOME" .. "/.vim/undodir",
       },
     },
 
