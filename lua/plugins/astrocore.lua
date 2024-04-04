@@ -6,6 +6,7 @@ return {
     options = {
       opt = {
         backup = false,
+        conceallevel = 1,
         colorcolumn = "120",
         formatoptions = "jn",
         scrolloff = 15,
