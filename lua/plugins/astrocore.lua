@@ -21,6 +21,8 @@ return {
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       n = {
+        ["<Leader>pf"] = { "<cmd>Telescope projects<cr>", desc = "Project Finder" },
+        ["<Leader>pA"] = { "<cmd>ProjectRoot<cr>", desc = "Project Add" },
         L = {
           function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
           desc = "Next buffer",
