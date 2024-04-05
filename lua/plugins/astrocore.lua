@@ -18,7 +18,6 @@ return {
       },
     },
 
-    -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       n = {
         ["<Leader>pf"] = { "<cmd>Telescope projects<cr>", desc = "Project Finder" },
@@ -30,6 +29,22 @@ return {
         H = {
           function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
           desc = "Previous buffer",
+        },
+      },
+    },
+
+    -- Autocmds
+    autocmds = {
+      disable_auto_comment = {
+        {
+          event = "FileType",
+          pattern = "*",
+          callback = function()
+            vim.opt.formatoptions:remove "c"
+            vim.opt.formatoptions:remove "r"
+            vim.opt.formatoptions:remove "o"
+          end,
+          desc = "Disable auto-commenting on new line",
         },
       },
     },
