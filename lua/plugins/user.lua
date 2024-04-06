@@ -1,6 +1,7 @@
 ---@type LazySpec
 return {
   { "folke/tokyonight.nvim" },
+
   {
     "mbbill/undotree",
     config = function()
