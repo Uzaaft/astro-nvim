@@ -17,7 +17,6 @@ return {
         undodir = os.getenv "HOME" .. "/.vim/undodir",
       },
     },
-
     mappings = {
       n = {
         ["<Leader>th"] = { "<Cmd>ToggleTerm size=25 direction=horizontal<cr>", desc = "Open terminal horizontal" },
@@ -31,8 +30,6 @@ return {
         },
       },
     },
-
-    -- Autocmds
     autocmds = {
       disable_auto_comment = {
         {
