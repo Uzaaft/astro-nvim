@@ -4,17 +4,13 @@ return {
     local status = require "astroui.status"
 
     opts.winbar = {
-      -- store the current buffer number
       init = function(self) self.bufnr = vim.api.nvim_get_current_buf() end,
-      fallthrough = false, -- pick the correct winbar based on condition
-      -- inactive winbar
+      fallthrough = false,
       {
         condition = function() return not status.condition.is_active() end,
-        -- show the path to the file relative to the working directory
         status.component.separated_path {
           path_func = status.provider.filename { modify = ":.:h" },
         },
-        -- add the file name and icon
         status.component.file_info {
           file_icon = {
             hl = status.hl.file_icon "winbar",
@@ -29,14 +25,11 @@ return {
           update = "BufEnter",
         },
       },
-      -- active winbar
       {
-        -- show the path to the file relative to the working directory
         status.component.separated_path {
           path_func = status.provider.filename { modify = ":.:h" },
         },
-        -- add the file name and icon
-        status.component.file_info { -- add file_info to breadcrumbs
+        status.component.file_info {
           file_icon = { hl = status.hl.filetype_color, padding = { left = 0 } },
           filename = {},
           filetype = false,
@@ -45,14 +38,6 @@ return {
           hl = status.hl.get_attributes("winbar", true),
           surround = false,
           update = "BufEnter",
-        },
-
-        -- Uncomment to enable breadcrumbs
-        status.component.breadcrumbs {
-          icon = { hl = true },
-          hl = status.hl.get_attributes("winbar", true),
-          prefix = true,
-          padding = { left = 0 },
         },
       },
     }
