@@ -22,6 +22,7 @@ return {
       n = {
         ["<Leader>pf"] = { "<cmd>Telescope projects<cr>", desc = "Project Finder" },
         ["<Leader>pA"] = { "<cmd>ProjectRoot<cr>", desc = "Project Add" },
+        ["<Leader>th"] = { "<Cmd>ToggleTerm size=25 direction=horizontal<cr>", desc = "Open terminal horizontal" },
         L = {
           function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
           desc = "Next buffer",
